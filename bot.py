@@ -44,6 +44,17 @@ loop = asyncio.get_event_loop()
 async def start():
     print('\n')
     print('Initalizing Your Bot')
+    while True:  # Loop until successfully authenticated
+        try:
+            await TechVJBot.start()  # Start the bot
+            print("Bot started successfully.")
+            break  # Exit the loop if successful
+        except FloodWait as e:
+            print(f"Rate limit hit during start. Waiting for {e.value} seconds.")
+            await asyncio.sleep(e.value)  # Wait for the required time
+        except Exception as e:
+            print(f"An error occurred during bot start: {e}")
+            break  # Exit the loop on other exceptions
     bot_info = await TechVJBot.get_me()
     await initialize_clients()
     for name in files:
