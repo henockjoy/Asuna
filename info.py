@@ -23,7 +23,7 @@ API_HASH = environ.get('API_HASH', 'e0411b9fff980888a22edf1c9dde2bd7')
 BOT_TOKEN = environ.get('BOT_TOKEN', "")
 
 # Bot settings
-CACHE_TIME = int(environ.get('CACHE_TIME', 86400))
+CACHE_TIME = int(environ.get('CACHE_TIME', 1800))
 PICS = (environ.get('PICS', 'https://graph.org/file/6a73466ae370b915b7f4e-815136811909794d08.jpg https://graph.org/file/da29794cc568faefde6b8-c56f26e8b5bf3ec93e.jpg https://graph.org/file/af879b552a548a7068a2a-cb70821a84c96698e1.jpg https://graph.org/file/ce24878f785fd1ff6c2e6-75d8b8a3ba551d9818.jpg https://graph.org/file/0ec5f4e80dad1c3057a77-cd5fc648f6457dabd2.jpg https://graph.org/file/4329e5902214eb5b069f7-fc8f6d83fec6b1ad69.jpg')).split() #SAMPLE PIC
 NOR_IMG = environ.get("NOR_IMG", "https://graph.org/file/b69af2db776e4e85d21ec.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://t.me/FT_Channels")
