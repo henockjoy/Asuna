@@ -4,15 +4,8 @@
 
 # Clone Code Credit : YT - @Tech_VJ / TG - @VJ_Bots / GitHub - @VJBots
 
-import sys
-import glob
-import importlib
-import logging
-import logging.config
-import pytz
-import asyncio
+import sys, glob, importlib, logging, logging.config, pytz, asyncio
 from pathlib import Path
-from pyrogram.errors import FloodWait  # Import FloodWait
 
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
@@ -44,29 +37,15 @@ from TechVJ.bot.clients import initialize_clients
 
 ppath = "plugins/*.py"
 files = glob.glob(ppath)
+TechVJBot.start()
+loop = asyncio.get_event_loop()
+
 
 async def start():
     print('\n')
-    print('Initializing Your Bot')
-    
-    while True:  # Loop until successfully authenticated
-        try:
-            await TechVJBot.start()  # Start the bot
-            print("Bot started successfully.")
-            break  # Exit the loop if successful
-        except FloodWait as e:
-            print(f"Rate limit hit during start. Waiting for {e.value} seconds.")
-            await asyncio.sleep(e.value)  # Wait for the required time
-        except ConnectionError:
-            print("Client is already connected. Waiting before retrying...")
-            await asyncio.sleep(5)  # Wait for a bit before retrying
-        except Exception as e:
-            print(f"An error occurred during bot start: {e}")
-            break  # Exit the loop on other exceptions
-
+    print('Initalizing Your Bot')
     bot_info = await TechVJBot.get_me()
     await initialize_clients()
-    
     for name in files:
         with open(name) as a:
             patt = Path(a.name)
@@ -78,10 +57,8 @@ async def start():
             spec.loader.exec_module(load)
             sys.modules["plugins." + plugin_name] = load
             print("Tech VJ Imported => " + plugin_name)
-
     if ON_HEROKU:
         asyncio.create_task(ping_server())
-
     b_users, b_chats = await db.get_banned()
     temp.BANNED_USERS = b_users
     temp.BANNED_CHATS = b_chats
@@ -93,27 +70,24 @@ async def start():
     temp.B_NAME = me.first_name
     logging.info(LOG_STR)
     logging.info(script.LOGO)
-    
     tz = pytz.timezone('Asia/Kolkata')
     today = date.today()
     now = datetime.now(tz)
     time = now.strftime("%H:%M:%S %p")
-    
     await TechVJBot.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(today, time))
-    
-    if CLONE_MODE:
+    if CLONE_MODE == True:
         print("Restarting All Clone Bots.......")
         await restart_bots()
         print("Restarted All Clone Bots.")
-    
     app = web.AppRunner(await web_server())
     await app.setup()
     bind_address = "0.0.0.0"
     await web.TCPSite(app, bind_address, PORT).start()
     await idle()
 
+
 if __name__ == '__main__':
     try:
-        asyncio.run(start())  # Use asyncio.run() to start the async function
+        loop.run_until_complete(start())
     except KeyboardInterrupt:
         logging.info('Service Stopped Bye 👋')
