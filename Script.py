@@ -230,7 +230,8 @@ Nᴀᴍᴇ - {}"""
 
     CAPTION = """<code>||{file_name}||\n\n{file_caption}\n\nSize: {file_size}</code>""" 
 
-    IMDB_TEMPLATE_TXT = """<u><b>🏷 {title}</b></u>
+    IMDB_TEMPLATE_TXT = """<u><b>{title}</b></u>
+    
 🎭 𝖦𝖾𝗇𝗋𝖾𝗌: {genres}
 📆 𝖸𝖾𝖺𝗋: {year}
 🌟 𝖱𝖺𝗍𝗂𝗇𝗀: {rating} / 10
