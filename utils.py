@@ -497,7 +497,7 @@ async def get_shortlink(chat_id, link):
     if URL.startswith("shorturllink") or URL.startswith("terabox.in") or URL.startswith("urlshorten.in"):
         URL = SHORTLINK_URL
         API = SHORTLINK_API
-    if URL == "api.shareus.io":
+    if URL == "mdiskshortner.link":
         url = f'https://{URL}/easy_api'
         params = {
             "key": API,
@@ -530,7 +530,7 @@ async def get_tutorial(chat_id):
 async def get_verify_shorted_link(link, url, api):
     API = api
     URL = url
-    if URL == "api.shareus.io":
+    if URL == "mdiskshortner.link":
         url = f'https://{URL}/easy_api'
         params = {
             "key": API,
