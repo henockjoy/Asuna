@@ -207,9 +207,13 @@ Nᴀᴍᴇ - {}"""
 
     MELCOW_ENG = """<b>Hᴇʟʟᴏ {} 😍, Aɴᴅ Wᴇʟᴄᴏᴍᴇ Tᴏ {} Gʀᴏᴜᴘ ❤️</b>"""
 
-    SHORTLINK_INFO = """
+    SHORTLINK_INFO = """<b>📯 𝖣𝗂𝗌𝖼𝗅𝖺𝗂𝗆𝖾𝗋:</b>
+<i>All the Files in this bot are freely available on the internet or posted by somebody else.
 
-🫵 Select Your Language And Earn Money 💰"""
+This bot is indexing files which are already uploaded on Internet or Telegram for easy of Searching.
+We Respect all the Copyright Laws and works in Compilance With DMCA and EUCD.
+
+If anything is against law please contact us so that it can be Removed ASAP.</i>"""
 
     REQINFO = """
 ⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠
