@@ -74,7 +74,7 @@ PUBLIC_FILE_CHANNEL = environ.get('PUBLIC_FILE_CHANNEL', 'FTStreamz') # Public C
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/FT_Chatz')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/FT_Channels')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/FT_Channels')
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TeamYoonseri') # Support Chat Link Without https:// or @
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'teamyoonseri') # Support Chat Link Without https:// or @
 
 # True Or False
 AI_SPELL_CHECK = bool(environ.get('AI_SPELL_CHECK', True))
