@@ -68,7 +68,7 @@ async def give_filter(client, message):
         search = message.text
         temp_files, temp_offset, total_results = await get_search_results(chat_id=message.chat.id, query=search.lower(), offset=0, filter=True)
         if total_results == 0:
-            return await message.reply_text(f"Hᴇʏ {message.from_user.mention}, {search} ɴᴏᴛ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ.ᴄʜᴇᴄᴋ ɪғ ᴛʜᴇ sᴘᴇʟʟɪɴɢ ɪs ᴄᴏʀʀᴇᴄᴛ ᴏɴ ɢᴏᴏɢʟᴇ. \n\nuse \request ᴛᴏ ʜᴇʟᴘ ᴀᴅᴍɪɴs ᴛᴏ ᴀᴅᴅ ɪᴛ...")
+            return await message.reply_text(f"Hᴇʏ {message.from_user.mention}, {search} ɴᴏᴛ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ.ᴄʜᴇᴄᴋ ɪғ ᴛʜᴇ sᴘᴇʟʟɪɴɢ ɪs ᴄᴏʀʀᴇᴄᴛ ᴏɴ ɢᴏᴏɢʟᴇ.\n\nuse #request ᴛᴏ ʜᴇʟᴘ ᴀᴅᴍɪɴs ᴛᴏ ᴀᴅᴅ ɪᴛ...")
         else:
             return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}. \n\nTʜɪs ɪs ᴀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\nJᴏɪɴ ᴀɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - https://t.me/FT_Chatz</b>")
 
